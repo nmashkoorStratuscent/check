@@ -1,0 +1,4 @@
+2022-06-01 05:11:31,215 [INFO] data_quality_lib.schema_class: IAF_2107081845_100085_c48a752b.csv ====STARTING====
+2022-06-01 05:11:31,258 [INFO] data_quality_lib.analyte_class: IAF_2107081845_100085_c48a752b.csv file read correctly
+2022-06-01 05:11:31,261 [INFO] data_quality_lib.analyte_class: IAF_2107081845_100085_c48a752b.csv analyte identified as no
+2022-06-01 05:11:31,421 [INFO] data_quality_lib.schema_class: IAF_2107081845_100085_c48a752b.csv  ---ERROR--- In sensor_module_id: sensor_module_id size is not correct, we need ids to have sizes 6, 4 and 7

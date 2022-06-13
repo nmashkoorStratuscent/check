@@ -1,0 +1,2 @@
+2022-05-31 05:51:30,904 [INFO] data_quality_lib.schema_class: IAS_2110081543_100107_f0503b44.csv ====STARTING====
+2022-05-31 05:51:30,923 [INFO] data_quality_lib.analyte_class: IAS_2110081543_100107_f0503b44.csv file read correctly

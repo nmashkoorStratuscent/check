@@ -1,0 +1,8 @@
+2022-06-01 05:38:05,887 [INFO] data_quality_lib.analyte_class: IAF_2107081845_100091_7c5ef467.csv file read correctly
+2022-06-01 05:38:05,888 [INFO] data_quality_lib.analyte_class: IAF_2107081845_100091_7c5ef467.csv analyte identified as no
+2022-06-01 05:38:05,917 [INFO] data_quality_lib.data_quality_lib: IAF_2107081845_100091_7c5ef467.csv ====STARTING====
+2022-06-01 05:38:05,950 [INFO] data_quality_lib.analyte_class: IAF_2107081845_100091_7c5ef467.csv file read correctly
+2022-06-01 05:38:05,951 [INFO] data_quality_lib.analyte_class: IAF_2107081845_100091_7c5ef467.csv analyte identified as no
+2022-06-01 05:38:05,957 [INFO] data_quality_lib.data_quality_lib:  ====HUMIDITY CHECK====
+2022-06-01 05:38:05,958 [INFO] data_quality_lib.data_quality_lib:  ====RESPONSE EXPOSURE CHECK====
+2022-06-01 05:38:05,963 [INFO] data_quality_lib.data_quality_lib:  RESPONSE EXPOSURE FAIL: Nb. sensing elements > 0.01 is larger than 4

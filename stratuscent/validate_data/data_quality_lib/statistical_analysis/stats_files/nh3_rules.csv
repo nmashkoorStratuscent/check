@@ -1,0 +1,5 @@
+mean_nb_saturated,4.201863354037267
+std_nb_saturated,2.0261327496529145
+max_nb_saturated,9
+never_saturated,[1, 9, 13, 14, 15, 20, 21, 25, 26, 28, 31]
+mostly_saturated,[2, 12, 17]
