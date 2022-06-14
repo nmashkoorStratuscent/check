@@ -11,7 +11,7 @@ def test_schema_validation():
     log_folder = r'./logs'
     log_config = r'./logger_configs'
     print('Iniating Schema Validation...')
-    schema_validator.validate_schema()
+    dql.schema_validator.validate_schema()
     print('Schema Validation Passed!')
 
 def test_data_analyser():
@@ -19,7 +19,7 @@ def test_data_analyser():
     statistical_analysis = r'./statistical_analysis'
     
     print('Analysing Data...')
-    data_analyser.create_analytics()
+    dql.data_analyser.create_analytics()
     print('Statistical files generated')
 
 def test_data_quality():
@@ -30,7 +30,7 @@ def test_data_quality():
     log_config = r'./logger_configs'
 
     print('Iniating Data Quality Checks...')
-    data_validator.validate_data_quality()
+    dql.data_validator.validate_data_quality()
     print('Data Qaulity OK')
 if __name__ == "__main__":
     # Check for static files folder
