@@ -1,5 +1,5 @@
 # Path to Service Account Key
-KEY = r''
+KEY = r'C:\Users\User\Desktop\Strat\ml_pipeline-hafizur\stratuscent\combined\keys\testproject8008-24541b9591e3.json'
 import os
 from google.cloud import storage
 
@@ -16,10 +16,21 @@ class GStore:
     def update_bucket(self, bucket_id):
         self.bucket_id = bucket_id
 
-    def list_files(self, path, get_abs = False):
+    def list_files(self, path, get_abs = True, recurse=False):
         """Lists paths of all the files in the bucket."""
-        blobs = self.client.list_blobs(self.bucket_id, prefix=path, delimiter='/')
-        return [f'gs://{blob.name}' if get_abs else blob.name for blob in blobs]
+        if recurse:
+            delimiter=None
+        else:
+            delimiter='/'
+        blobs = self.client.list_blobs(self.bucket_id, prefix=path, delimiter=delimiter)
+        result = []
+        for blob in blobs:
+            if blob.name[-1] != '/': 
+                if get_abs:
+                    result.append(f'gs://{blob.name}')
+                else:
+                    result.append(blob.name)
+        return result
 
     def rename_file(self, file_name, new_name):
         """Renames a file."""
