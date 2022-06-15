@@ -15,8 +15,11 @@ class GStore:
 
     def update_bucket(self, bucket_id):
         self.bucket_id = bucket_id
+    
+    def get_bucket_name(self):
+        return self.bucket_id
 
-    def list_files(self, path, get_abs = True, recurse=False):
+    def list_files(self, path, get_abs = False, recurse=False):
         """Lists paths of all the files in the bucket."""
         if recurse:
             delimiter=None
@@ -27,7 +30,7 @@ class GStore:
         for blob in blobs:
             if blob.name[-1] != '/': 
                 if get_abs:
-                    result.append(f'gs://{blob.name}')
+                    result.append(f'gs://{self.bucket_id}/{blob.name}')
                 else:
                     result.append(blob.name)
         return result
@@ -39,7 +42,7 @@ class GStore:
         new_blob = bucket.rename_blob(blob, new_name)
         return new_blob.name
 
-    def copy_file(self, source_name, destination_name, delete_org=True):
+    def copy_file(self, source_name, destination_name, delete_org=False):
         """Copies a file from source to destination."""
         bucket = self.client.bucket(self.bucket_id)
         source_file = bucket.blob(source_name)
