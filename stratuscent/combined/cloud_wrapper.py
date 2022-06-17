@@ -1,5 +1,5 @@
 # Path to Service Account Key
-KEY = r'C:\Users\User\Desktop\Strat\ml_pipeline-hafizur\stratuscent\combined\keys\testproject8008-24541b9591e3.json'
+KEY = r''
 import os
 from google.cloud import storage
 
@@ -76,6 +76,7 @@ class GStore:
             blob.delete()
 
     def mkdir(self, destination_folder_name):
+        """Make a new directory in cloud"""
         bucket = self.client.get_bucket(self.bucket_id)
         if destination_folder_name[-1] != '/':
             destination_folder_name = destination_folder_name + '/'
@@ -90,11 +91,13 @@ class GStore:
         return True
 
     def upload_file_local(self, source_file_name, dest_file_path):
+        """Uplaod a local file to cloud"""
         bucket = self.client.bucket(self.bucket_id)
         blob = bucket.blob(dest_file_path)
         return blob.upload_from_filename(source_file_name)
     
     def upload__folder(self, source_folder_path, destination_path):
+        """Upload a local folder to cloud"""
         if destination_path and destination_path[-1] != '/':
             destination_path = destination_path + '/'
         bucket = self.client.bucket(self.bucket_id)
@@ -116,11 +119,13 @@ class GStore:
         return True
 
     def download_file_local(self, cloud_file_name, dest_file_path):
+        """Downloads file into file directory"""
         bucket = self.client.bucket(self.bucket_id)
         blob = bucket.blob(cloud_file_name)
         return blob.download_to_filename(dest_file_path)
 
     def download_into_memory(self, file_name):
+        """Downloads file into memory"""
         bucket = self.client.bucket(self.bucket_id)
         blob = bucket.blob(file_name)
         contents = blob.download_as_string()
